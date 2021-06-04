@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment2"
         android:name="com.example.navigationcomponents.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Home Fragment"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment2_to_loginFragment"
@@ -16,6 +16,45 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.navigationcomponents.fragments.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:label="Login Fragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.navigationcomponents.fragments.WelcomeFragment"
+        android:label="{name}"
+        tools:layout="@layout/fragment_welcome">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.navigationcomponents.fragments.SettingsFragment"
+        android:label="Settings Fragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.example.navigationcomponents.fragments.TermsFragment"
+        android:label="Terms &amp; Conditions"
+        tools:layout="@layout/fragment_terms" />
+    <action
+        android:id="@+id/action_global_termsFragment"
+        app:destination="@id/termsFragment" />
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.navigationcomponents.fragments.SearchFragment"
+        android:label="Search Fragment"
+        tools:layout="@layout/fragment_search" />
 </navigation>

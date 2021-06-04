@@ -12,11 +12,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        
         btn_login.setOnClickListener {
-
             val action = HomeFragmentDirections.actionHomeFragment2ToLoginFragment()
             findNavController().navigate(action)
         }
-
     }
 }
